@@ -4,6 +4,7 @@ import logoAsset from "@/assets/hanil-logo.png.asset.json";
 const PHONE = "010-8279-2073";
 const PHONE_TEL = "01082792073";
 const ADDRESS = "경기도 수원시 조원동";
+const ADDRESS_DETAIL = "경기도 수원시 장안구 경수대로 976번길 22 301호";
 const HOURS = "10:00 ~ 22:00";
 const MAP_URL = "https://map.naver.com/p/entry/place/1887769414?c=15.00,0,0,0,dh";
 
@@ -37,8 +38,8 @@ export const Route = createFileRoute("/")({
             "@type": "PostalAddress",
             addressCountry: "KR",
             addressRegion: "경기도",
-            addressLocality: "수원시",
-            streetAddress: "조원동",
+            addressLocality: "수원시 장안구",
+            streetAddress: "경수대로 976번길 22 301호",
           },
           openingHours: "Mo-Su 10:00-22:00",
         }),
@@ -511,6 +512,7 @@ function Contact() {
             ))}
             <div>
               <dt className="text-xs font-bold tracking-[0.2em] text-brand-gold">오시는 길</dt>
+              <dd className="mt-2 text-base font-bold leading-relaxed">{ADDRESS_DETAIL}</dd>
               <dd className="mt-3">
                 <a
                   href={MAP_URL}
@@ -558,7 +560,7 @@ function Footer() {
           한일 <span className="text-brand-red">A+</span> 학원
         </p>
         <p className="text-sm text-muted-foreground">
-          {ADDRESS} · {PHONE} · 상담 {HOURS}
+          {ADDRESS_DETAIL} · {PHONE} · 상담 {HOURS}
         </p>
         <a
           href={MAP_URL}
