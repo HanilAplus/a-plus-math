@@ -560,7 +560,7 @@ function Footer() {
           한일 <span className="text-brand-red">A+</span> 학원
         </p>
         <p className="text-sm text-muted-foreground">
-          {ADDRESS} · {PHONE} · 상담 {HOURS}
+          {ADDRESS_DETAIL} · {PHONE} · 상담 {HOURS}
         </p>
         <a
           href={MAP_URL}
