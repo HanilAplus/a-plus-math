@@ -512,6 +512,7 @@ function Contact() {
             ))}
             <div>
               <dt className="text-xs font-bold tracking-[0.2em] text-brand-gold">오시는 길</dt>
+              <dd className="mt-2 text-base font-bold leading-relaxed">{ADDRESS_DETAIL}</dd>
               <dd className="mt-3">
                 <a
                   href={MAP_URL}
