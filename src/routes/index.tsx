@@ -13,13 +13,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "경력 25+년 원장이 직접 지도하는 수원 조원동 한일 A+ 학원. 초·중·고 영어·수학 전문, 소수정예 맞춤 수업. 상담 10:00~22:00 · 010-8279-2073",
+          "경력 25년 원장이 직접 지도하는 수원 조원동 한일 A+ 학원. 초·중·고 영어·수학 전문, 소수정예 맞춤 수업. 상담 10:00~22:00 · 010-8279-2073",
       },
       { property: "og:title", content: "한일 A+ 학원 | 수원 조원동 초·중·고 영어·수학 전문" },
       {
         property: "og:description",
         content:
-          "학원·과외 경력 25+년, 지금도 현장에서 직접 가르칩니다. 수원 조원동 초·중·고 영수 전문 학원.",
+          "학원·과외 경력 25년, 지금도 현장에서 직접 가르칩니다. 수원 조원동 초·중·고 영수 전문 학원.",
       },
     ],
     scripts: [
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
           "@type": "EducationalOrganization",
           name: "한일 A+ 학원",
           description:
-            "수원 조원동 초·중·고 영어·수학 전문 학원. 학원·과외 경력 25+년.",
+            "수원 조원동 초·중·고 영어·수학 전문 학원. 학원·과외 경력 25년.",
           telephone: `+82-${PHONE.slice(1)}`,
           address: {
             "@type": "PostalAddress",
@@ -171,7 +171,7 @@ function Hero() {
           </div>
 
           <h1 className="mt-6 text-4xl font-black leading-[1.15] tracking-tight text-navy-ink sm:text-5xl lg:text-6xl">
-            25+년의 경력,
+            25년의 경력,
             <br />
             <span className="text-gradient-navy">지금도 직접</span>
             <br />
@@ -179,7 +179,7 @@ function Hero() {
           </h1>
 
           <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-            학원과 과외 현장에서 25+년. 한일 A+ 학원은 유행을 좇는 대신, 학생 한 명 한 명의
+            학원과 과외 현장에서 25년. 한일 A+ 학원은 유행을 좇는 대신, 학생 한 명 한 명의
             부족한 지점을 정확히 찾아 채웁니다. 초등부터 고등까지 영어·수학을 책임집니다.
           </p>
 
@@ -200,7 +200,7 @@ function Hero() {
 
           <dl className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-border pt-7">
             {[
-              ["25+년", "지도 경력"],
+              ["25년", "지도 경력"],
               ["초·중·고", "전 학년"],
               ["영어·수학", "전문 과목"],
             ].map(([v, k]) => (
@@ -281,15 +281,15 @@ function Experience() {
             <span className="text-brand-red">쌓인 사례</span>입니다.
           </>
         }
-        lead="25+년 동안 수많은 학생을 만났습니다. 어디서 막히는지, 무엇을 먼저 잡아야 성적이 오르는지 — 오랜 경험에서 나오는 판단으로 지도합니다."
+        lead="25년 동안 수많은 학생을 만났습니다. 어디서 막히는지, 무엇을 먼저 잡아야 성적이 오르는지 — 오랜 경험에서 나오는 판단으로 지도합니다."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-3">
         {[
           {
             n: "01",
-            t: "25+년 현장 경력",
-            d: "학원과 과외를 오가며 쌓은 25+년. 이론이 아닌 실제 교실에서 검증된 지도법으로 가르칩니다.",
+            t: "25년 현장 경력",
+            d: "학원과 과외를 오가며 쌓은 25년. 이론이 아닌 실제 교실에서 검증된 지도법으로 가르칩니다.",
           },
           {
             n: "02",
