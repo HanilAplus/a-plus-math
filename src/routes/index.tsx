@@ -5,6 +5,7 @@ const PHONE = "010-8279-2073";
 const PHONE_TEL = "01082792073";
 const ADDRESS = "경기도 수원시 조원동";
 const HOURS = "10:00 ~ 22:00";
+const MAP_URL = "https://map.naver.com/p/entry/place/1887769414?c=15.00,0,0,0,dh";
 
 export const Route = createFileRoute("/")({
   head: () => ({
