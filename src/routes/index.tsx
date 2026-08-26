@@ -509,6 +509,33 @@ function Contact() {
                 <dd className="mt-2 text-xl font-extrabold">{v}</dd>
               </div>
             ))}
+            <div>
+              <dt className="text-xs font-bold tracking-[0.2em] text-brand-gold">오시는 길</dt>
+              <dd className="mt-3">
+                <a
+                  href={MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-brand-gold/60 px-6 py-3 text-sm font-bold text-brand-gold transition-colors hover:bg-brand-gold/10"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="size-4"
+                    aria-hidden
+                  >
+                    <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  네이버 지도에서 보기
+                </a>
+              </dd>
+            </div>
           </dl>
         </div>
       </div>
