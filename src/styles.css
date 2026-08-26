@@ -177,5 +177,36 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
   }
+}
+
+/* Brand utilities built on design tokens */
+@utility text-gradient-navy {
+  background-image: linear-gradient(135deg, var(--navy-ink), var(--navy));
+  background-clip: text;
+  color: transparent;
+}
+
+@utility surface-navy {
+  background-image: linear-gradient(160deg, var(--navy-deep), var(--navy-ink));
+  color: var(--paper);
+}
+
+@utility rule-gold {
+  background-image: linear-gradient(90deg, transparent, var(--brand-gold), transparent);
+}
+
+@utility shadow-card {
+  box-shadow:
+    0 1px 2px color-mix(in oklab, var(--navy-ink) 6%, transparent),
+    0 12px 32px -12px color-mix(in oklab, var(--navy-ink) 22%, transparent);
+}
+
+@utility shadow-lift {
+  box-shadow:
+    0 2px 4px color-mix(in oklab, var(--navy-ink) 8%, transparent),
+    0 24px 50px -18px color-mix(in oklab, var(--navy-ink) 34%, transparent);
 }
