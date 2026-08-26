@@ -8,22 +8,34 @@ const ADDRESS_DETAIL = "경기도 수원시 장안구 경수대로 976번길 22 
 const HOURS = "10:00 ~ 22:00";
 const MAP_URL = "https://map.naver.com/p/entry/place/1887769414?c=15.00,0,0,0,dh";
 
+const SITE_URL = "https://a-plus-math.lovable.app";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "한일 A+ 학원 | 수원 조원동 초·중·고 영어·수학 전문" },
+      { title: "한일 A+ 학원 | 수원 조원동 수학학원·영어학원 (장안구 초·중·고 영수전문)" },
       {
         name: "description",
         content:
-          "경력 25년 원장이 직접 지도하는 수원 조원동 한일 A+ 학원. 초·중·고 영어·수학 전문, 소수정예 맞춤 수업. 상담 10:00~22:00 · 010-8279-2073",
+          "수원 조원동 수학학원·영어학원 한일 A+ 학원. 학원·과외 경력 25년 원장이 직접 지도하는 장안구 초·중·고 영수전문 소수정예 학원. 상담 10:00~22:00 · 010-8279-2073",
       },
-      { property: "og:title", content: "한일 A+ 학원 | 수원 조원동 초·중·고 영어·수학 전문" },
+      {
+        name: "keywords",
+        content:
+          "한일 A+ 학원, 수원 수학학원, 조원동 수학학원, 조원동 영어학원, 장안구 학원, 수원 영수학원, 초중고 영어수학",
+      },
+      {
+        property: "og:title",
+        content: "한일 A+ 학원 | 수원 조원동 수학학원·영어학원",
+      },
       {
         property: "og:description",
         content:
-          "학원·과외 경력 25년, 지금도 현장에서 직접 가르칩니다. 수원 조원동 초·중·고 영수 전문 학원.",
+          "학원·과외 경력 25년, 지금도 현장에서 직접 가르칩니다. 수원시 장안구 조원동 초·중·고 영수전문 학원.",
       },
+      { property: "og:url", content: `${SITE_URL}/` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
     scripts: [
       {
         type: "application/ld+json",
@@ -31,8 +43,11 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "EducationalOrganization",
           name: "한일 A+ 학원",
+          alternateName: "한일 에이플러스 학원",
+          url: `${SITE_URL}/`,
+          image: `${SITE_URL}/favicon.png`,
           description:
-            "수원 조원동 초·중·고 영어·수학 전문 학원. 학원·과외 경력 25년.",
+            "수원시 장안구 조원동 초·중·고 영어·수학 전문 학원. 학원·과외 경력 25년 원장 직접 지도.",
           telephone: `+82-${PHONE.slice(1)}`,
           address: {
             "@type": "PostalAddress",
@@ -41,7 +56,24 @@ export const Route = createFileRoute("/")({
             addressLocality: "수원시 장안구",
             streetAddress: "경수대로 976번길 22 301호",
           },
-          openingHours: "Mo-Su 10:00-22:00",
+          areaServed: ["수원시 장안구", "조원동", "정자동", "송죽동"],
+          hasMap: MAP_URL,
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday",
+              ],
+              opens: "10:00",
+              closes: "22:00",
+            },
+          ],
         }),
       },
     ],
@@ -168,21 +200,22 @@ function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-accent/60 px-4 py-1.5">
             <span className="size-1.5 animate-shine rounded-full bg-brand-red" />
             <span className="text-xs font-bold tracking-wide text-navy">
-              수원 조원동 · 초·중·고 영수전문
+              수원시 장안구 조원동 · 초·중·고 영수전문 학원
             </span>
           </div>
 
           <h1 className="mt-6 text-4xl font-black leading-[1.15] tracking-tight text-navy-ink sm:text-5xl lg:text-6xl">
-            25년의 경력,
+            수원 조원동 수학학원
             <br />
-            <span className="text-gradient-navy">지금도 직접</span>
+            <span className="text-gradient-navy">한일 A+ 학원</span>
             <br />
-            가르칩니다.
+            경력 25년, 지금도 직접.
           </h1>
 
           <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-            학원과 과외 현장에서 25년. 한일 A+ 학원은 유행을 좇는 대신, 학생 한 명 한 명의
-            부족한 지점을 정확히 찾아 채웁니다. 초등부터 고등까지 영어·수학을 책임집니다.
+            학원과 과외 현장에서 25년. 수원시 장안구 조원동의 한일 A+ 학원은 유행을 좇는
+            대신, 학생 한 명 한 명의 부족한 지점을 정확히 찾아 채웁니다. 초등·중등·고등
+            영어와 수학을 한 곳에서 책임집니다.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
