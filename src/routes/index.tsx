@@ -560,6 +560,14 @@ function Footer() {
         <p className="text-sm text-muted-foreground">
           {ADDRESS} · {PHONE} · 상담 {HOURS}
         </p>
+        <a
+          href={MAP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-bold text-brand-red hover:underline"
+        >
+          네이버 지도로 오시는 길 보기 →
+        </a>
         <p className="text-xs text-muted-foreground/80">
           © {new Date().getFullYear()} 한일 A+ 학원. All rights reserved.
         </p>
