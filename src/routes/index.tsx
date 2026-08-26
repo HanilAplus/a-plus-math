@@ -5,6 +5,7 @@ const PHONE = "010-8279-2073";
 const PHONE_TEL = "01082792073";
 const ADDRESS = "경기도 수원시 조원동";
 const HOURS = "10:00 ~ 22:00";
+const MAP_URL = "https://map.naver.com/p/entry/place/1887769414?c=15.00,0,0,0,dh";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -508,6 +509,33 @@ function Contact() {
                 <dd className="mt-2 text-xl font-extrabold">{v}</dd>
               </div>
             ))}
+            <div>
+              <dt className="text-xs font-bold tracking-[0.2em] text-brand-gold">오시는 길</dt>
+              <dd className="mt-3">
+                <a
+                  href={MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-brand-gold/60 px-6 py-3 text-sm font-bold text-brand-gold transition-colors hover:bg-brand-gold/10"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="size-4"
+                    aria-hidden
+                  >
+                    <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  네이버 지도에서 보기
+                </a>
+              </dd>
+            </div>
           </dl>
         </div>
       </div>
@@ -532,6 +560,14 @@ function Footer() {
         <p className="text-sm text-muted-foreground">
           {ADDRESS} · {PHONE} · 상담 {HOURS}
         </p>
+        <a
+          href={MAP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-bold text-brand-red hover:underline"
+        >
+          네이버 지도로 오시는 길 보기 →
+        </a>
         <p className="text-xs text-muted-foreground/80">
           © {new Date().getFullYear()} 한일 A+ 학원. All rights reserved.
         </p>
