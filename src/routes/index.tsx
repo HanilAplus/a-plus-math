@@ -143,6 +143,7 @@ function Home() {
         <Subjects />
         <Levels />
         <Method />
+        <Faq />
         <Contact />
       </main>
       <Footer />
