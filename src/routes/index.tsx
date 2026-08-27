@@ -549,6 +549,42 @@ function Method() {
   );
 }
 
+/* ---------------- faq ---------------- */
+
+function Faq() {
+  return (
+    <section id="faq" className="mx-auto max-w-3xl px-5 py-20 md:py-28">
+      <SectionTitle
+        label="FAQ"
+        title="자주 묻는 질문"
+        lead="수원 조원동 한일 A+ 학원에 대해 궁금한 점을 한눈에 정리했습니다. 더 궁금한 점은 언제든 연락 주세요."
+      />
+
+      <div className="mt-14 space-y-3">
+        {FAQS.map((f) => (
+          <details
+            key={f.q}
+            className="group rounded-2xl border border-border bg-card p-6 shadow-card transition-colors open:border-navy/40"
+          >
+            <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-base font-bold leading-snug text-navy-ink">
+              <span>{f.q}</span>
+              <span
+                className="mt-0.5 shrink-0 size-6 rounded-full bg-navy/5 text-center text-lg leading-6 text-navy transition-transform group-open:rotate-45"
+                aria-hidden
+              >
+                +
+              </span>
+            </summary>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              {f.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- contact ---------------- */
 
 function Contact() {
