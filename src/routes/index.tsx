@@ -210,6 +210,7 @@ function Header() {
             ["과목", "#subjects"],
             ["대상", "#levels"],
             ["수업방식", "#method"],
+            ["자주 묻는 질문", "#faq"],
             ["오시는 길", "#contact"],
           ].map(([label, href]) => (
             <a
