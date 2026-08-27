@@ -10,6 +10,45 @@ const MAP_URL = "https://map.naver.com/p/entry/place/1887769414?c=15.00,0,0,0,dh
 
 const SITE_URL = "https://a-plus-math.lovable.app";
 
+const FAQS: { q: string; a: string }[] = [
+  {
+    q: "한일 A+ 학원은 어떤 학원인가요?",
+    a: "수원시 장안구 조원동에 위치한 초·중·고 영어·수학 전문 학원입니다. 학원과 과외 현장에서 25년간 가르친 원장이 지금도 직접 수업을 진행하는 소수정예 학원입니다.",
+  },
+  {
+    q: "어떤 과목을 가르치나요?",
+    a: "영어와 수학 두 과목에 집중합니다. 초등·중등·고등 학년별로 어휘·문법·독해·개념 원리·서술형·내신 및 수능 대비까지 과정별로 지도합니다.",
+  },
+  {
+    q: "초등·중등·고등 모두 가능한가요?",
+    a: "네, 초등·중등·고등 전 학년을 지도합니다. 학년이 바뀌어도 같은 원장이 이어서 가르치기 때문에 학생의 강점과 약점을 처음부터 다시 파악할 필요가 없습니다.",
+  },
+  {
+    q: "원장이 직접 가르치나요?",
+    a: "네. 학원·과외 경력 25년의 원장이 지금도 직접 수업합니다. 강사가 자주 바뀌지 않아 학생의 학습 흐름이 끊기지 않습니다.",
+  },
+  {
+    q: "상담은 언제 가능한가요?",
+    a: "상담 가능 시간은 10:00 ~ 22:00이며, 연중 가능합니다. 전화가 어려우시면 문자로 남겨주셔도 됩니다.",
+  },
+  {
+    q: "위치가 어디인가요?",
+    a: "경기도 수원시 장안구 경수대로 976번길 22 301호(조원동)입니다. 네이버 지도에서 한일 A+ 학원으로 검색하시면 위치를 확인하실 수 있습니다.",
+  },
+  {
+    q: "전화번호는 어떻게 되나요?",
+    a: "010-8279-2073입니다. 전화·문자 모두 가능하며, 상담 시간(10:00~22:00) 안에 편하게 연락 주세요.",
+  },
+  {
+    q: "내신과 수능 대비도 되나요?",
+    a: "네. 학교별 내신 기출과 출제 경향에 맞춰 대비하고, 고등부는 내신 성적을 지키면서 수능 유형에 적응하도록 학생 목표에 맞춰 우선순위를 정해 지도합니다.",
+  },
+  {
+    q: "소수정예로 진행하나요?",
+    a: "네. 소수정예로 진행하여 학생 한 명 한 명의 부족한 지점을 정확히 찾아 채우는 방식으로 지도합니다.",
+  },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -76,6 +115,18 @@ export const Route = createFileRoute("/")({
           ],
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: Home,
@@ -92,6 +143,7 @@ function Home() {
         <Subjects />
         <Levels />
         <Method />
+        <Faq />
         <Contact />
       </main>
       <Footer />
@@ -159,6 +211,7 @@ function Header() {
             ["과목", "#subjects"],
             ["대상", "#levels"],
             ["수업방식", "#method"],
+            ["자주 묻는 질문", "#faq"],
             ["오시는 길", "#contact"],
           ].map(([label, href]) => (
             <a
@@ -491,6 +544,42 @@ function Method() {
             </li>
           ))}
         </ol>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- faq ---------------- */
+
+function Faq() {
+  return (
+    <section id="faq" className="mx-auto max-w-3xl px-5 py-20 md:py-28">
+      <SectionTitle
+        label="FAQ"
+        title="자주 묻는 질문"
+        lead="수원 조원동 한일 A+ 학원에 대해 궁금한 점을 한눈에 정리했습니다. 더 궁금한 점은 언제든 연락 주세요."
+      />
+
+      <div className="mt-14 space-y-3">
+        {FAQS.map((f) => (
+          <details
+            key={f.q}
+            className="group rounded-2xl border border-border bg-card p-6 shadow-card transition-colors open:border-navy/40"
+          >
+            <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-base font-bold leading-snug text-navy-ink">
+              <span>{f.q}</span>
+              <span
+                className="mt-0.5 shrink-0 size-6 rounded-full bg-navy/5 text-center text-lg leading-6 text-navy transition-transform group-open:rotate-45"
+                aria-hidden
+              >
+                +
+              </span>
+            </summary>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              {f.a}
+            </p>
+          </details>
+        ))}
       </div>
     </section>
   );
